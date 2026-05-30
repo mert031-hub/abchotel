@@ -34,7 +34,7 @@ export default function Hero() {
     // Hard cap: never wait more than 1.5 s on the loading screen
     const timer = setTimeout(reveal, 1500);
     return () => clearTimeout(timer);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -57,7 +57,7 @@ export default function Hero() {
         className="hero-video absolute inset-0 w-full h-full object-cover"
         style={{ zIndex: 0 }}
       >
-        <source src="/images/hero-video.mp4" type="video/mp4" />
+        <source src="/images/video1.mp4" type="video/mp4" />
       </video>
 
       {/* Gradient overlay — heavier on left for text readability */}
@@ -81,11 +81,13 @@ export default function Hero() {
         style={{ zIndex: 2 }}
       >
         <div className="max-w-2xl">
-
           {/* ── Location badge ── */}
           <div
             className="inline-flex items-center gap-1.5 text-white/85 text-xs sm:text-sm font-medium px-3 py-1.5 sm:px-4 sm:py-2 rounded-full mb-4 sm:mb-6 border border-white/20"
-            style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(8px)" }}
+            style={{
+              background: "rgba(255,255,255,0.10)",
+              backdropFilter: "blur(8px)",
+            }}
           >
             <MapPin size={12} className="shrink-0" />
             {t.hero.badge}
@@ -132,7 +134,10 @@ export default function Hero() {
             <a
               href={`tel:${PHONE}`}
               className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 font-semibold px-4 py-3.5 sm:px-6 sm:py-4 rounded-xl border border-white/25 transition-all active:scale-95 text-white hover:bg-white/20 text-sm sm:text-base"
-              style={{ background: "rgba(255,255,255,0.13)", backdropFilter: "blur(6px)" }}
+              style={{
+                background: "rgba(255,255,255,0.13)",
+                backdropFilter: "blur(6px)",
+              }}
             >
               <Phone size={16} className="shrink-0" />
               <span className="truncate">{t.hero.cta_call}</span>
@@ -144,7 +149,10 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="hidden sm:inline-flex items-center justify-center gap-2 font-semibold px-6 py-4 rounded-xl border border-white/25 transition-all active:scale-95 text-white hover:bg-white/20"
-              style={{ background: "rgba(255,255,255,0.13)", backdropFilter: "blur(6px)" }}
+              style={{
+                background: "rgba(255,255,255,0.13)",
+                backdropFilter: "blur(6px)",
+              }}
             >
               <MapPin size={18} />
               {t.hero.cta_directions}
@@ -156,11 +164,22 @@ export default function Hero() {
           <div className="flex items-center gap-2 flex-wrap sm:hidden">
             <div
               className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/15 text-xs"
-              style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.10)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={9} className={i < 4 ? "fill-amber-400 text-amber-400" : "fill-amber-300 text-amber-300"} />
+                  <Star
+                    key={i}
+                    size={9}
+                    className={
+                      i < 4
+                        ? "fill-amber-400 text-amber-400"
+                        : "fill-amber-300 text-amber-300"
+                    }
+                  />
                 ))}
               </div>
               <span className="text-white font-bold">4.5</span>
@@ -168,14 +187,20 @@ export default function Hero() {
             </div>
             <div
               className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/15 text-xs"
-              style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.10)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <span className="text-emerald-300 font-bold">9/10</span>
               <span className="text-white/55">Hotels.com</span>
             </div>
             <div
               className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg border border-white/15 text-xs"
-              style={{ background: "rgba(255,255,255,0.10)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.10)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <span className="text-sky-300 font-bold">8/10</span>
               <span className="text-white/55">Booking</span>
@@ -186,32 +211,66 @@ export default function Hero() {
           <div className="hidden sm:flex flex-wrap gap-3">
             <div
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/20"
-              style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={13} className={i < 4 ? "fill-amber-400 text-amber-400" : "fill-amber-300 text-amber-300"} />
+                  <Star
+                    key={i}
+                    size={13}
+                    className={
+                      i < 4
+                        ? "fill-amber-400 text-amber-400"
+                        : "fill-amber-300 text-amber-300"
+                    }
+                  />
                 ))}
               </div>
               <span className="text-white font-bold text-sm">4.5</span>
-              <span className="text-white/60 text-xs">{t.hero.trust_google}</span>
+              <span className="text-white/60 text-xs">
+                {t.hero.trust_google}
+              </span>
             </div>
             <div
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-white/20"
-              style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(8px)",
+              }}
             >
-              <span className="text-xs font-bold px-1.5 py-0.5 rounded" style={{ color: "#6ee7b7", background: "rgba(16,185,129,0.25)" }}>9/10</span>
+              <span
+                className="text-xs font-bold px-1.5 py-0.5 rounded"
+                style={{
+                  color: "#6ee7b7",
+                  background: "rgba(16,185,129,0.25)",
+                }}
+              >
+                9/10
+              </span>
               <span className="text-white/75 text-xs">Hotels.com</span>
             </div>
             <div
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-white/20"
-              style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(8px)",
+              }}
             >
-              <span className="text-xs font-bold px-1.5 py-0.5 rounded" style={{ color: "#93c5fd", background: "rgba(59,130,246,0.25)" }}>8/10</span>
+              <span
+                className="text-xs font-bold px-1.5 py-0.5 rounded"
+                style={{
+                  color: "#93c5fd",
+                  background: "rgba(59,130,246,0.25)",
+                }}
+              >
+                8/10
+              </span>
               <span className="text-white/75 text-xs">Booking</span>
             </div>
           </div>
-
         </div>
       </div>
 
@@ -220,7 +279,9 @@ export default function Hero() {
         className="absolute bottom-20 sm:bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1"
         style={{ zIndex: 2 }}
       >
-        <span className="text-white/30 text-xs font-medium tracking-widest uppercase hidden sm:block">scroll</span>
+        <span className="text-white/30 text-xs font-medium tracking-widest uppercase hidden sm:block">
+          scroll
+        </span>
         <ChevronDown size={22} className="text-white/35 animate-bounce" />
       </div>
     </section>
