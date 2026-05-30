@@ -60,6 +60,7 @@ export default function RootLayout({
     <html lang="tr" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preload" as="video" href="/images/hero-video.mp4" type="video/mp4" />
         <meta name="theme-color" content="#2563eb" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>

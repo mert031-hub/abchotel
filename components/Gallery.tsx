@@ -8,42 +8,34 @@ import { useLanguage } from "@/context/LanguageContext";
 type GalleryImage = {
   src: string;
   alt: string;
-  category: "room" | "kitchen" | "bathroom" | "common";
 };
 
 const IMAGES: GalleryImage[] = [
-  { src: "/images/salon.avif", alt: "Living Room", category: "room" },
-  { src: "/images/salon2.avif", alt: "Living Room 2", category: "room" },
-  { src: "/images/salon3.avif", alt: "Living Room 3", category: "room" },
-  { src: "/images/salon7.avif", alt: "Living Room 4", category: "room" },
-  { src: "/images/ciftkisilik1.avif", alt: "Double Room", category: "room" },
-  { src: "/images/ciftkisilik2.avif", alt: "Double Room 2", category: "room" },
-  { src: "/images/ciftkisilik3.avif", alt: "Double Room 3", category: "room" },
-  { src: "/images/ciftkisilik4.avif", alt: "Double Room 4", category: "room" },
-  { src: "/images/ciftkisilik5.avif", alt: "Double Room 5", category: "room" },
-  { src: "/images/ciftkisilik6.avif", alt: "Double Room 6", category: "room" },
-  { src: "/images/ciftkisilik8.avif", alt: "Double Room 7", category: "room" },
-  { src: "/images/ciftkisilik9.avif", alt: "Double Room 8", category: "room" },
-  { src: "/images/mutfak1.avif", alt: "Kitchen", category: "kitchen" },
-  { src: "/images/mutfak2.avif", alt: "Kitchen 2", category: "kitchen" },
-  { src: "/images/banyo1.avif", alt: "Bathroom", category: "bathroom" },
-  { src: "/images/banyo2.avif", alt: "Bathroom 2", category: "bathroom" },
-  { src: "/images/bahce1.avif", alt: "Garden", category: "common" },
-  { src: "/images/balkon1.webp", alt: "Balcony", category: "common" },
-  { src: "/images/manzara1.avif", alt: "View", category: "common" },
+  { src: "/images/salon.avif", alt: "Living Room" },
+  { src: "/images/salon2.avif", alt: "Living Room 2" },
+  { src: "/images/salon3.avif", alt: "Living Room 3" },
+  { src: "/images/salon7.avif", alt: "Living Room 4" },
+  { src: "/images/ciftkisilik1.avif", alt: "Double Room" },
+  { src: "/images/ciftkisilik2.avif", alt: "Double Room 2" },
+  { src: "/images/ciftkisilik3.avif", alt: "Double Room 3" },
+  { src: "/images/ciftkisilik4.avif", alt: "Double Room 4" },
+  { src: "/images/ciftkisilik5.avif", alt: "Double Room 5" },
+  { src: "/images/ciftkisilik6.avif", alt: "Double Room 6" },
+  { src: "/images/ciftkisilik8.avif", alt: "Double Room 7" },
+  { src: "/images/ciftkisilik9.avif", alt: "Double Room 8" },
+  { src: "/images/mutfak1.avif", alt: "Kitchen" },
+  { src: "/images/mutfak2.avif", alt: "Kitchen 2" },
+  { src: "/images/banyo1.avif", alt: "Bathroom" },
+  { src: "/images/banyo2.avif", alt: "Bathroom 2" },
+  { src: "/images/bahce1.avif", alt: "Garden" },
+  { src: "/images/balkon1.webp", alt: "Balcony" },
+  { src: "/images/manzara1.avif", alt: "View" },
 ];
-
-const CATEGORIES = ["all", "room", "kitchen", "bathroom", "common"] as const;
 
 export default function Gallery() {
   const { t } = useLanguage();
-  const [activeCategory, setActiveCategory] = useState<string>("all");
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const sectionRef = useRef<HTMLDivElement>(null);
-
-  const filtered = activeCategory === "all"
-    ? IMAGES
-    : IMAGES.filter((img) => img.category === activeCategory);
 
   const openLightbox = (index: number) => {
     setLightboxIndex(index);
@@ -56,12 +48,12 @@ export default function Gallery() {
   }, []);
 
   const prevImage = useCallback(() => {
-    setLightboxIndex((i) => (i !== null ? (i - 1 + filtered.length) % filtered.length : null));
-  }, [filtered.length]);
+    setLightboxIndex((i) => (i !== null ? (i - 1 + IMAGES.length) % IMAGES.length : null));
+  }, []);
 
   const nextImage = useCallback(() => {
-    setLightboxIndex((i) => (i !== null ? (i + 1) % filtered.length : null));
-  }, [filtered.length]);
+    setLightboxIndex((i) => (i !== null ? (i + 1) % IMAGES.length : null));
+  }, []);
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -113,30 +105,13 @@ export default function Gallery() {
             </p>
           </div>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 mb-10 reveal">
-            {CATEGORIES.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeCategory === cat
-                    ? "bg-blue-600 text-white shadow-md"
-                    : "bg-white border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-600"
-                }`}
-              >
-                {t.gallery.categories[cat as keyof typeof t.gallery.categories]}
-              </button>
-            ))}
-          </div>
-
-          {/* Masonry-style grid */}
-          <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 space-y-4">
-            {filtered.map((img, i) => (
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {IMAGES.map((img, i) => (
               <div
-                key={`${img.src}-${activeCategory}`}
-                className="reveal break-inside-avoid"
-                style={{ transitionDelay: `${i * 40}ms` }}
+                key={img.src}
+                className="reveal"
+                style={{ transitionDelay: `${(i % 9) * 50}ms` }}
               >
                 <button
                   onClick={() => openLightbox(i)}
@@ -173,8 +148,8 @@ export default function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             <Image
-              src={filtered[lightboxIndex].src}
-              alt={filtered[lightboxIndex].alt}
+              src={IMAGES[lightboxIndex].src}
+              alt={IMAGES[lightboxIndex].alt}
               fill
               className="object-contain rounded-2xl"
               sizes="(max-width: 768px) 100vw, 80vw"
@@ -206,7 +181,7 @@ export default function Gallery() {
 
             {/* Counter */}
             <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-sm text-white text-sm px-4 py-1.5 rounded-full">
-              {lightboxIndex + 1} / {filtered.length}
+              {lightboxIndex + 1} / {IMAGES.length}
             </div>
           </div>
         </div>

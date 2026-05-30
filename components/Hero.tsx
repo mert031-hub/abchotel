@@ -29,8 +29,8 @@ export default function Hero() {
   };
 
   useEffect(() => {
-    // Fallback: show content after 5 s even if video hasn't loaded
-    const t = setTimeout(reveal, 5000);
+    // Fallback: reveal after 2.5 s if browser stalls before canplay fires
+    const t = setTimeout(reveal, 2500);
     return () => clearTimeout(t);
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
