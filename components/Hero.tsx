@@ -19,18 +19,20 @@ const WA_ICON = (
 export default function Hero() {
   const { t } = useLanguage();
   const videoRef = useRef<HTMLVideoElement>(null);
+  const revealed = useRef(false);
   const [loadingDone, setLoadingDone] = useState(false);
   const [contentIn, setContentIn] = useState(false);
 
   const reveal = () => {
+    if (revealed.current) return;
+    revealed.current = true;
     setLoadingDone(true);
-    // Slight delay so the transition feels intentional
     setTimeout(() => setContentIn(true), 150);
   };
 
   useEffect(() => {
-    // Fallback: reveal after 2.5 s if browser stalls before canplay fires
-    const t = setTimeout(reveal, 2500);
+    // Hard cap: never wait more than 1.5 s on the loading screen
+    const t = setTimeout(reveal, 1500);
     return () => clearTimeout(t);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -49,7 +51,6 @@ export default function Hero() {
         loop
         playsInline
         preload="auto"
-        poster="/images/salon.avif"
         onCanPlay={reveal}
         onError={reveal}
         className="absolute inset-0 w-full h-full object-cover"
