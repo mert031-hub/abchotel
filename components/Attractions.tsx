@@ -52,7 +52,8 @@ export default function Attractions() {
   return (
     <section
       id="attractions"
-      className="py-20 sm:py-28 bg-white"
+      className="py-20 sm:py-28"
+      style={{ background: "#fdfcf8" }}
       ref={sectionRef}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">

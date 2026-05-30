@@ -77,7 +77,8 @@ export default function Reviews() {
   return (
     <section
       id="reviews"
-      className="py-20 sm:py-28 bg-gradient-to-b from-slate-50 to-white overflow-hidden"
+      className="py-20 sm:py-28 overflow-hidden"
+      style={{ background: "linear-gradient(to bottom, #f5f2ec, #fdfcf8)" }}
       ref={sectionRef}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -157,12 +158,14 @@ export default function Reviews() {
         {/* Horizontal slider */}
         <div
           ref={sliderRef}
+          suppressHydrationWarning
           className="flex gap-4 overflow-x-auto no-scrollbar pb-4"
           style={{ scrollSnapType: "x mandatory" }}
         >
           {t.reviews.items.map((review, i) => (
             <div
               key={i}
+              suppressHydrationWarning
               className="flex-none w-72 sm:w-80 bg-white border border-slate-100 rounded-2xl p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
               style={{ scrollSnapAlign: "start" }}
             >

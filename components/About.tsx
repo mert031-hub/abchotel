@@ -29,7 +29,7 @@ export default function About() {
   }, []);
 
   return (
-    <section id="about" className="py-20 sm:py-28 bg-white" ref={sectionRef}>
+    <section id="about" className="py-20 sm:py-28" style={{ background: "#fdfcf8" }} ref={sectionRef}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section header */}
         <div className="text-center mb-16 reveal">

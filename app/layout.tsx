@@ -55,14 +55,14 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // suppressHydrationWarning on html+body suppresses browser-extension attribute injections (e.g. bis_skin_checked)
   return (
-    <html lang="tr" className="h-full antialiased">
+    <html lang="tr" className="h-full antialiased" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <meta name="theme-color" content="#2563eb" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      {/* suppressHydrationWarning prevents noise from browser-extension DOM mutations */}
       <body suppressHydrationWarning className="min-h-full flex flex-col overflow-x-hidden">
         <LanguageProvider>{children}</LanguageProvider>
       </body>

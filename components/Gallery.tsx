@@ -95,7 +95,8 @@ export default function Gallery() {
     <>
       <section
         id="gallery"
-        className="py-20 sm:py-28 bg-gradient-to-b from-white to-slate-50"
+        className="py-20 sm:py-28"
+        style={{ background: "linear-gradient(to bottom, #fdfcf8, #f5f2ec)" }}
         ref={sectionRef}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6">

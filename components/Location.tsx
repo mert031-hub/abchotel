@@ -33,7 +33,8 @@ export default function Location() {
   return (
     <section
       id="location"
-      className="py-20 sm:py-28 bg-white"
+      className="py-20 sm:py-28"
+      style={{ background: "linear-gradient(to bottom, #f5f2ec, #fdfcf8)" }}
       ref={sectionRef}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -54,7 +55,7 @@ export default function Location() {
           {/* Left: Info */}
           <div className="lg:col-span-1 space-y-4 reveal">
             {/* Address card */}
-            <div className="bg-slate-50 border border-slate-100 rounded-2xl p-6">
+            <div className="border border-stone-200 rounded-2xl p-6" style={{ background: "#f5f2ec" }}>
               <div className="flex items-start gap-3 mb-4">
                 <div className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
                   <MapPin size={18} className="text-blue-600" />

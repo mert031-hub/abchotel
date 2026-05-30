@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #fdfcf8;     /* warm off-white instead of stark #ffffff */
   --foreground: #1e293b;
   --primary: #2563eb;
   --primary-dark: #1d4ed8;
@@ -10,7 +10,7 @@
   --beige: #fdf8f0;
   --beige-dark: #f0e6d3;
   --muted: #64748b;
-  --border: #e2e8f0;
+  --border: #e5e0d8;          /* slightly warm border */
   --card-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
   --card-shadow-hover: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
