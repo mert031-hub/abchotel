@@ -1,0 +1,519 @@
+export type Language = "tr" | "en";
+
+export const translations = {
+  tr: {
+    nav: {
+      home: "Ana Sayfa",
+      about: "Hakkımızda",
+      apartments: "Daireler",
+      gallery: "Galeri",
+      reviews: "Yorumlar",
+      location: "Konum",
+      contact: "İletişim",
+    },
+    hero: {
+      badge: "Antalya'nın Kalbinde",
+      title: "ABC Apart Hotel",
+      subtitle: "Antalya'da Huzurlu Apart Konaklaması",
+      description:
+        "Evinizin konforunu taşırken Antalya'nın güzelliklerini keşfedin. Temiz, sessiz ve güvenli apart dairelerimizde kendinizi evde gibi hissedeceksiniz.",
+      cta_whatsapp: "WhatsApp'tan Yaz",
+      cta_call: "Hemen Ara",
+      cta_directions: "Yol Tarifi Al",
+      trust_google: "Google Puanı",
+      trust_reviews: "200+ Değerlendirme",
+      trust_hotels: "Hotels.com 9/10",
+      trust_booking: "Booking 8/10",
+    },
+    about: {
+      badge: "Biz Kimiz",
+      title: "Evinizden Uzakta Eviniz",
+      description:
+        "ABC Apart Hotel olarak, misafirlerimize yalnızca bir konaklama yeri değil, gerçek bir ev ortamı sunuyoruz. Düden Şelalesine yakın, sessiz ve güvenli konumumuzla aile tatilleriniz, uzun süreli konaklamalarınız için ideal tercihiz.",
+      features: [
+        {
+          title: "Temiz & Sessiz",
+          desc: "Titizlikle temizlenen, sessiz ortam sunuyor.",
+        },
+        {
+          title: "Güvenli Konum",
+          desc: "Muratpaşa'nın güvenli ve sakin mahallesi.",
+        },
+        {
+          title: "Aile Dostu",
+          desc: "Geniş daireler aileler için mükemmel.",
+        },
+        {
+          title: "Ev Konforu",
+          desc: "Tam donanımlı mutfak ve yaşam alanları.",
+        },
+        {
+          title: "Uygun Konum",
+          desc: "Plaj, şelale ve merkeze kolay ulaşım.",
+        },
+        {
+          title: "Uzun Konaklamalar",
+          desc: "Haftalık ve aylık konaklamalar için ideal.",
+        },
+      ],
+    },
+    features: {
+      badge: "Olanaklar",
+      title: "Her İhtiyacınız Düşünüldü",
+      description:
+        "Dairelerimiz, evinizin tüm konforunu yanınıza taşıyacak şekilde eksiksiz donatılmıştır.",
+      categories: {
+        kitchen: "Mutfak",
+        living: "Yaşam Alanı",
+        bathroom: "Banyo",
+        extra: "Ekstra Olanaklar",
+      },
+      items: {
+        fridge: "Tam Boy Buzdolabı",
+        oven: "Fırın",
+        cooktop: "Set Üstü Ocak",
+        dishwasher: "Bulaşık Makinesi",
+        spacious: "Geniş Daire Düzeni",
+        living_area: "Konforlu Oturma Alanı",
+        sound: "Ses Yalıtımı",
+        desk: "Çalışma Masası",
+        shower: "Duş Kabini",
+        shower_head: "Geniş Duş Başlığı",
+        hair_dryer: "Saç Kurutma Makinesi",
+        slippers: "Terlik",
+        washing: "Çamaşır Makinesi",
+        iron: "Ütü / Ütü Masası",
+        ac: "Klima",
+        hot_water: "İstediğiniz Zaman Sıcak Su",
+        bedding: "Kaliteli Yatak Takımı",
+      },
+    },
+    apartments: {
+      badge: "Daire Tipleri",
+      title: "Size Uygun Dairenizi Seçin",
+      description:
+        "İhtiyacınıza göre farklı büyüklükte daire seçeneklerimiz mevcuttur.",
+      cta: "Müsaitlik ve Fiyat Bilgisi",
+      economy: {
+        name: "Economy Apart Daire",
+        type: "1+1 Daire",
+        desc: "Çiftler ve kısa süreli konaklamalar için ideal, tüm temel olanaklara sahip konforlu daire.",
+        features: [
+          "Tam Donanımlı Mutfak",
+          "Özel Banyo",
+          "Geniş Duş Başlığı",
+          "Saç Kurutma Makinesi",
+          "Terlik",
+          "Klima",
+          "Ücretsiz Wi-Fi",
+        ],
+      },
+      comfort: {
+        name: "Comfort Apart Daire",
+        type: "2+1 Daire",
+        desc: "Aileler ve uzun süreli konaklamalar için premium konforu sunan, geniş ve ferah daire.",
+        features: [
+          "Kaliteli Yatak Takımı",
+          "Çalışma Masası",
+          "Ses Yalıtımı",
+          "Ütü / Ütü Masası",
+          "Çamaşır Makinesi",
+          "Tam Donanımlı Mutfak",
+          "Geniş Yaşam Alanı",
+          "Klima",
+        ],
+      },
+    },
+    gallery: {
+      badge: "Galeri",
+      title: "Dairelerimize Göz Atın",
+      description:
+        "Temiz, modern ve ferah dairelerimizden kareler. Aklınızdaki yer tam burasıdır.",
+      categories: {
+        all: "Tümü",
+        room: "Odalar",
+        kitchen: "Mutfak",
+        bathroom: "Banyo",
+        common: "Ortak Alanlar",
+      },
+    },
+    attractions: {
+      badge: "Yakın Çevre",
+      title: "Her Şey Yakınında",
+      description:
+        "ABC Apart Hotel, Antalya'nın en popüler cazibe merkezlerine yakın konumdadır.",
+      minutes: "dakika",
+      items: [
+        {
+          name: "Aşağı Düden Şelalesi",
+          desc: "Düden Parkı içindeki muhteşem şelale manzarası",
+          time: "~2",
+        },
+        {
+          name: "Sandland Antalya",
+          desc: "Antalya Kum Heykel Müzesi — eşsiz kum sanatı",
+          time: "~9",
+        },
+        {
+          name: "Lara Plajı",
+          desc: "Antalya'nın ünlü mavi bayraklı sahil şeridi",
+          time: "~10",
+        },
+        {
+          name: "Ters Ev Antalya",
+          desc: "Eğlenceli ve yaratıcı fotoğraf deneyimi",
+          time: "~14",
+        },
+        {
+          name: "Kaleiçi Tarihi Merkez",
+          desc: "Antik Roma limanı ve tarihi Antalya sokakları",
+          time: "~30",
+        },
+      ],
+    },
+    reviews: {
+      badge: "Yorumlar",
+      title: "Misafirlerimiz Ne Diyor?",
+      description: "Gerçek misafirlerimizin gerçek deneyimleri.",
+      google_rating: "Google Puanı",
+      total_reviews: "200+ Değerlendirme",
+      platforms: "Platform Puanları",
+      items: [
+        {
+          name: "Finance Chief",
+          rating: 5,
+          date: "3 ay önce",
+          text: "Çok güzel bir konaklama — kesinlikle tavsiye ederim! Bu konforlu, sıcak ve temiz bir otel. Konum çok uygun.",
+          lang: "Google",
+        },
+        {
+          name: "Christianoo",
+          rating: 5,
+          date: "8 ay önce",
+          text: "Otel personeli çok çok güler yüzlü ve yardımseverdi. Resepsiyona sorarak taksi çağırabiliyorsunuz. Odalar temiz ve iyi olanaklara sahip.",
+          lang: "Google",
+        },
+        {
+          name: "Ted Lim",
+          rating: 5,
+          date: "7 ay önce",
+          text: "Listelenen giriş saatinden (14:00) önce, 12:30'da geldim. Sürpriz şekilde oda upgrade teklif edildi. Erken gelmeme rağmen bu anlayışlı yaklaşım çok mutlu etti.",
+          lang: "Google",
+        },
+        {
+          name: "Zeynel H.",
+          rating: 5,
+          date: "6 ay önce",
+          text: "Ekim 2025'te yaklaşık 20 gün kaldık. Temiz, sessiz ve güvenli. Bahçesinde portakal, limon, mandalina, nar ağaçları var. Düden Şelalesine çok yakın.",
+          lang: "Google",
+        },
+        {
+          name: "Luay Zakaria",
+          rating: 5,
+          date: "9 ay önce",
+          text: "8 gece harika bir konaklama. Rahat, konforlu ve geniş daire. İstediğimiz zaman sıcak su var, çamaşır makinesi de mevcut.",
+          lang: "Google",
+        },
+        {
+          name: "Suat M. Okyay",
+          rating: 5,
+          date: "9 ay önce",
+          text: "Gönül rahatlığıyla kalabileceğiniz tertemiz bir yer. İlgi, alaka, hizmet, temizlik — klima, çamaşır makinesi, mikrodalga dahil tüm donanım üst seviyede.",
+          lang: "Google",
+        },
+      ],
+    },
+    location: {
+      badge: "Konum",
+      title: "Bizi Nerede Bulabilirsiniz?",
+      description:
+        "Güzeloba mahallesinde, Düden Şelalesine yürüme mesafesinde, tüm ulaşım noktalarına yakın.",
+      address: "Güzeloba, 2109. Sk No:8, 07230 Muratpaşa/Antalya",
+      open_maps: "Google Maps'te Aç",
+      get_directions: "Yol Tarifi Al",
+    },
+    contact: {
+      badge: "İletişim",
+      title: "Rezervasyon ve Bilgi",
+      description:
+        "Rezervasyon ve fiyat bilgisi için WhatsApp veya telefon ile ulaşabilirsiniz. Memnuniyetle yardımcı olacağız.",
+      phone: "0506 298 80 80",
+      whatsapp_btn: "WhatsApp'tan Yaz",
+      call_btn: "Hemen Ara",
+      address_btn: "Adres ve Konum",
+      hours: "Her Gün • 08:00 - 22:00",
+      checkout: "Çıkış Saati: 12:00",
+    },
+    footer: {
+      tagline: "Antalya'da evinizin konforu.",
+      quick_links: "Hızlı Bağlantılar",
+      contact_info: "İletişim",
+      address: "Güzeloba, 2109. Sk No:8,\n07230 Muratpaşa/Antalya",
+      rights: "Tüm hakları saklıdır.",
+    },
+    floating: {
+      call: "Ara",
+      whatsapp: "WhatsApp",
+      directions: "Yol",
+    },
+  },
+
+  en: {
+    nav: {
+      home: "Home",
+      about: "About",
+      apartments: "Apartments",
+      gallery: "Gallery",
+      reviews: "Reviews",
+      location: "Location",
+      contact: "Contact",
+    },
+    hero: {
+      badge: "In the Heart of Antalya",
+      title: "ABC Apart Hotel",
+      subtitle: "Comfortable Apartment Stay in Antalya",
+      description:
+        "Discover the beauty of Antalya while enjoying the comfort of home. Our clean, quiet, and safe apart suites will make you feel right at home.",
+      cta_whatsapp: "Message on WhatsApp",
+      cta_call: "Call Now",
+      cta_directions: "Get Directions",
+      trust_google: "Google Rating",
+      trust_reviews: "200+ Reviews",
+      trust_hotels: "Hotels.com 9/10",
+      trust_booking: "Booking 8/10",
+    },
+    about: {
+      badge: "About Us",
+      title: "Your Home Away From Home",
+      description:
+        "At ABC Apart Hotel, we offer our guests not just a place to stay, but a true home experience. Located near Düden Waterfall in a quiet, safe neighborhood — perfect for family holidays and extended stays.",
+      features: [
+        {
+          title: "Clean & Quiet",
+          desc: "Meticulously cleaned rooms in a serene environment.",
+        },
+        {
+          title: "Safe Location",
+          desc: "A safe and calm neighborhood in Muratpaşa.",
+        },
+        {
+          title: "Family Friendly",
+          desc: "Spacious apartments perfect for families.",
+        },
+        {
+          title: "Home Comfort",
+          desc: "Fully equipped kitchens and living spaces.",
+        },
+        {
+          title: "Convenient Access",
+          desc: "Easy access to beach, waterfall and city center.",
+        },
+        {
+          title: "Long Stays",
+          desc: "Ideal for weekly and monthly stays.",
+        },
+      ],
+    },
+    features: {
+      badge: "Amenities",
+      title: "Everything You Need",
+      description:
+        "Our apartments are fully equipped to bring you all the comforts of home.",
+      categories: {
+        kitchen: "Kitchen",
+        living: "Living Area",
+        bathroom: "Bathroom",
+        extra: "Extra Amenities",
+      },
+      items: {
+        fridge: "Full-Size Refrigerator",
+        oven: "Oven",
+        cooktop: "Cooktop",
+        dishwasher: "Dishwasher",
+        spacious: "Spacious Apartment Layout",
+        living_area: "Comfortable Living Area",
+        sound: "Sound Insulation",
+        desk: "Work Desk",
+        shower: "Shower",
+        shower_head: "Large Shower Head",
+        hair_dryer: "Hair Dryer",
+        slippers: "Slippers",
+        washing: "Washing Machine",
+        iron: "Iron & Ironing Board",
+        ac: "Air Conditioning",
+        hot_water: "On-Demand Hot Water",
+        bedding: "Quality Bedding",
+      },
+    },
+    apartments: {
+      badge: "Apartment Types",
+      title: "Choose Your Perfect Stay",
+      description:
+        "We offer different apartment sizes to suit every need.",
+      cta: "Inquire About Availability & Pricing",
+      economy: {
+        name: "Economy Apart Suite",
+        type: "1-Bedroom Apartment",
+        desc: "Ideal for couples and shorter stays, a comfortable apartment with all essential amenities.",
+        features: [
+          "Fully Equipped Kitchen",
+          "Private Bathroom",
+          "Large Shower Head",
+          "Hair Dryer",
+          "Slippers",
+          "Air Conditioning",
+          "Free Wi-Fi",
+        ],
+      },
+      comfort: {
+        name: "Comfort Apart Suite",
+        type: "2-Bedroom Apartment",
+        desc: "Premium comfort for families and extended stays — spacious, airy, and fully furnished.",
+        features: [
+          "Quality Bedding",
+          "Work Desk",
+          "Sound Insulation",
+          "Iron & Ironing Board",
+          "Washing Machine",
+          "Fully Equipped Kitchen",
+          "Spacious Living Area",
+          "Air Conditioning",
+        ],
+      },
+    },
+    gallery: {
+      badge: "Gallery",
+      title: "Take a Look Inside",
+      description:
+        "Glimpses of our clean, modern, and spacious apartments. This is exactly the place you have in mind.",
+      categories: {
+        all: "All",
+        room: "Rooms",
+        kitchen: "Kitchen",
+        bathroom: "Bathroom",
+        common: "Common Areas",
+      },
+    },
+    attractions: {
+      badge: "Nearby",
+      title: "Everything is Close By",
+      description:
+        "ABC Apart Hotel is conveniently located near Antalya's most popular attractions.",
+      minutes: "min",
+      items: [
+        {
+          name: "Lower Düden Waterfall",
+          desc: "Spectacular waterfall views at Düden Park",
+          time: "~2",
+        },
+        {
+          name: "Sandland Antalya",
+          desc: "Antalya Sand Sculpture Museum — unique sand art",
+          time: "~9",
+        },
+        {
+          name: "Lara Beach",
+          desc: "Antalya's famous blue-flag coastline",
+          time: "~10",
+        },
+        {
+          name: "Upside Down House",
+          desc: "Fun and creative photo experience",
+          time: "~14",
+        },
+        {
+          name: "Kaleiçi Old Town",
+          desc: "Ancient Roman harbour and historic Antalya streets",
+          time: "~30",
+        },
+      ],
+    },
+    reviews: {
+      badge: "Reviews",
+      title: "What Our Guests Say",
+      description: "Real experiences from real guests.",
+      google_rating: "Google Rating",
+      total_reviews: "200+ Reviews",
+      platforms: "Platform Ratings",
+      items: [
+        {
+          name: "Finance Chief",
+          rating: 5,
+          date: "3 months ago",
+          text: "Very good stay — highly recommended! This is a comfortable, warm, and clean hotel. The location is very convenient.",
+          lang: "Google",
+        },
+        {
+          name: "Christianoo",
+          rating: 5,
+          date: "8 months ago",
+          text: "Hotel staff was very very friendly and helpful. You are able to call a taxi by asking the receptionist. Rooms were clean with good facilities.",
+          lang: "Google",
+        },
+        {
+          name: "Ted Lim",
+          rating: 5,
+          date: "7 months ago",
+          text: "I arrived before check-in time. Surprisingly the receptionist offered me an upgraded room. Very happy with such a considerate approach.",
+          lang: "Google",
+        },
+        {
+          name: "Zeynel H.",
+          rating: 5,
+          date: "6 months ago",
+          text: "We stayed about 20 days in October 2025. Clean, quiet and safe, with orange, lemon, tangerine and pomegranate trees in the garden. Very close to Düden Waterfall.",
+          lang: "Google",
+        },
+        {
+          name: "Luay Zakaria",
+          rating: 5,
+          date: "9 months ago",
+          text: "We had a very nice stay for 8 nights. Relaxed, comfortable, and spacious. Laundry is available and hot water is on demand — no worries at all.",
+          lang: "Google",
+        },
+        {
+          name: "Suat M. Okyay",
+          rating: 5,
+          date: "9 months ago",
+          text: "I can comfortably say this is an exceptionally clean place where you can stay with complete peace of mind. Service, cleanliness, and all amenities are top notch.",
+          lang: "Google",
+        },
+      ],
+    },
+    location: {
+      badge: "Location",
+      title: "Where to Find Us",
+      description:
+        "Located in Güzeloba, within walking distance of Düden Waterfall and close to all transportation hubs.",
+      address: "Güzeloba, 2109. Sk No:8, 07230 Muratpaşa/Antalya",
+      open_maps: "Open in Google Maps",
+      get_directions: "Get Directions",
+    },
+    contact: {
+      badge: "Contact",
+      title: "Reservations & Inquiries",
+      description:
+        "For reservations and pricing, reach us via WhatsApp or phone. We'll be happy to help.",
+      phone: "0506 298 80 80",
+      whatsapp_btn: "Message on WhatsApp",
+      call_btn: "Call Now",
+      address_btn: "View Address & Map",
+      hours: "Every Day • 08:00 - 22:00",
+      checkout: "Check-out: 12:00",
+    },
+    footer: {
+      tagline: "Home comfort in Antalya.",
+      quick_links: "Quick Links",
+      contact_info: "Contact",
+      address: "Güzeloba, 2109. Sk No:8,\n07230 Muratpaşa/Antalya",
+      rights: "All rights reserved.",
+    },
+    floating: {
+      call: "Call",
+      whatsapp: "WhatsApp",
+      directions: "Map",
+    },
+  },
+} as const;
+
+export type Translations = (typeof translations)[Language];
