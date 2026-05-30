@@ -8,15 +8,15 @@ import { useLanguage } from "@/context/LanguageContext";
 // Each image is pre-selected to match the attraction theme.
 const ATTRACTION_IMAGES = [
   // Düden Waterfall — tropical waterfall
-  "https://images.unsplash.com/photo-1433086966358-54859d0ed716?w=640&q=72&fit=crop",
+  "images/asagiduden.jpg",
   // Sandland — sand art / desert dunes
-  "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=640&q=72&fit=crop",
+  "images/sandland.jpg",
   // Lara Beach — the iconic tropical beach photo
-  "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=640&q=72&fit=crop",
+  "images/laraplaj.png",
   // Upside Down House — creative/quirky architecture
-  "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=640&q=72&fit=crop",
+  "/images/best-upside-down-house.jpg",
   // Kaleiçi Old Town — Mediterranean harbour/old town
-  "https://images.unsplash.com/photo-1539622106114-e0df812b8b18?w=640&q=72&fit=crop",
+  "images/kaleici.jpg",
 ];
 
 // Gradient overlays (each card gets its own tint, visible even if image fails to load)
@@ -43,7 +43,7 @@ export default function Attractions() {
           }
         });
       },
-      { threshold: 0.05 }
+      { threshold: 0.05 },
     );
     if (sectionRef.current) observer.observe(sectionRef.current);
     return () => observer.disconnect();
@@ -112,7 +112,10 @@ export default function Attractions() {
               <div className="absolute top-4 left-4">
                 <div
                   className="inline-flex items-center gap-1.5 text-white text-xs font-bold px-3 py-1.5 rounded-full border border-white/30"
-                  style={{ background: "rgba(0,0,0,0.35)", backdropFilter: "blur(6px)" }}
+                  style={{
+                    background: "rgba(0,0,0,0.35)",
+                    backdropFilter: "blur(6px)",
+                  }}
                 >
                   <Clock size={10} />
                   {item.time} {t.attractions.minutes}

@@ -96,7 +96,7 @@ export const translations = {
       cta: "Müsaitlik ve Fiyat Bilgisi",
       economy: {
         name: "Economy Apart Daire",
-        type: "1+1 Daire",
+        type: "Ekonomi",
         desc: "Çiftler ve kısa süreli konaklamalar için ideal, tüm temel olanaklara sahip konforlu daire.",
         features: [
           "Tam Donanımlı Mutfak",
@@ -110,7 +110,7 @@ export const translations = {
       },
       comfort: {
         name: "Comfort Apart Daire",
-        type: "2+1 Daire",
+        type: "Konfor",
         desc: "Aileler ve uzun süreli konaklamalar için premium konforu sunan, geniş ve ferah daire.",
         features: [
           "Kaliteli Yatak Takımı",
@@ -348,12 +348,11 @@ export const translations = {
     apartments: {
       badge: "Apartment Types",
       title: "Choose Your Perfect Stay",
-      description:
-        "We offer different apartment sizes to suit every need.",
+      description: "We offer different apartment sizes to suit every need.",
       cta: "Inquire About Availability & Pricing",
       economy: {
         name: "Economy Apart Suite",
-        type: "1-Bedroom Apartment",
+        type: "Economy",
         desc: "Ideal for couples and shorter stays, a comfortable apartment with all essential amenities.",
         features: [
           "Fully Equipped Kitchen",
@@ -367,7 +366,7 @@ export const translations = {
       },
       comfort: {
         name: "Comfort Apart Suite",
-        type: "2-Bedroom Apartment",
+        type: "Comfort",
         desc: "Premium comfort for families and extended stays — spacious, airy, and fully furnished.",
         features: [
           "Quality Bedding",

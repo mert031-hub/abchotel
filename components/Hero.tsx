@@ -32,7 +32,7 @@ export default function Hero() {
     // Fallback: reveal after 2.5 s if browser stalls before canplay fires
     const t = setTimeout(reveal, 2500);
     return () => clearTimeout(t);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -55,7 +55,7 @@ export default function Hero() {
         className="absolute inset-0 w-full h-full object-cover"
         style={{ zIndex: 0 }}
       >
-        <source src="/images/hero-video.mp4" type="video/mp4" />
+        <source src="/images/video1.mp4" type="video/mp4" />
       </video>
 
       {/* Gradient overlay for text legibility */}
@@ -80,29 +80,36 @@ export default function Hero() {
       >
         <div className="max-w-2xl">
           {/* Badge */}
-          <div className="inline-flex items-center gap-2 text-white/90 text-sm font-medium px-4 py-2 rounded-full mb-6 border border-white/20"
-            style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+          <div
+            className="inline-flex items-center gap-2 text-white/90 text-sm font-medium px-4 py-2 rounded-full mb-6 border border-white/20"
+            style={{
+              background: "rgba(255,255,255,0.12)",
+              backdropFilter: "blur(8px)",
+            }}
           >
             <MapPin size={14} />
             {t.hero.badge}
           </div>
 
           {/* Title */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4"
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold text-white leading-tight mb-4"
             style={{ textShadow: "0 2px 24px rgba(0,0,0,0.35)" }}
           >
             {t.hero.title}
           </h1>
 
           {/* Subtitle */}
-          <p className="text-xl sm:text-2xl font-semibold mb-5"
+          <p
+            className="text-xl sm:text-2xl font-semibold mb-5"
             style={{ color: "rgba(147,210,255,0.95)" }}
           >
             {t.hero.subtitle}
           </p>
 
           {/* Description */}
-          <p className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl"
+          <p
+            className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl"
             style={{ color: "rgba(255,255,255,0.80)" }}
           >
             {t.hero.description}
@@ -113,7 +120,10 @@ export default function Hero() {
             {/* Google */}
             <div
               className="flex items-center gap-2 px-4 py-2.5 rounded-xl border border-white/20"
-              style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <div className="flex gap-0.5">
                 {[...Array(5)].map((_, i) => (
@@ -129,13 +139,18 @@ export default function Hero() {
                 ))}
               </div>
               <span className="text-white font-bold text-sm">4.5</span>
-              <span className="text-white/60 text-xs">{t.hero.trust_google}</span>
+              <span className="text-white/60 text-xs">
+                {t.hero.trust_google}
+              </span>
             </div>
 
             {/* Reviews */}
             <div
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-white/20"
-              style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <MessageCircle size={14} className="text-sky-300" />
               <span className="text-white text-sm font-medium">
@@ -146,11 +161,17 @@ export default function Hero() {
             {/* Hotels.com */}
             <div
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-white/20"
-              style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <span
                 className="text-xs font-bold px-1.5 py-0.5 rounded"
-                style={{ color: "#6ee7b7", background: "rgba(16,185,129,0.25)" }}
+                style={{
+                  color: "#6ee7b7",
+                  background: "rgba(16,185,129,0.25)",
+                }}
               >
                 9/10
               </span>
@@ -160,11 +181,17 @@ export default function Hero() {
             {/* Booking */}
             <div
               className="flex items-center gap-1.5 px-4 py-2.5 rounded-xl border border-white/20"
-              style={{ background: "rgba(255,255,255,0.12)", backdropFilter: "blur(8px)" }}
+              style={{
+                background: "rgba(255,255,255,0.12)",
+                backdropFilter: "blur(8px)",
+              }}
             >
               <span
                 className="text-xs font-bold px-1.5 py-0.5 rounded"
-                style={{ color: "#93c5fd", background: "rgba(59,130,246,0.25)" }}
+                style={{
+                  color: "#93c5fd",
+                  background: "rgba(59,130,246,0.25)",
+                }}
               >
                 8/10
               </span>
@@ -187,7 +214,10 @@ export default function Hero() {
             <a
               href={`tel:${PHONE}`}
               className="inline-flex items-center justify-center gap-2.5 font-semibold px-6 py-4 rounded-xl border border-white/25 transition-all active:scale-95 text-white hover:bg-white/20"
-              style={{ background: "rgba(255,255,255,0.13)", backdropFilter: "blur(6px)" }}
+              style={{
+                background: "rgba(255,255,255,0.13)",
+                backdropFilter: "blur(6px)",
+              }}
             >
               <Phone size={18} />
               {t.hero.cta_call}
@@ -198,7 +228,10 @@ export default function Hero() {
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2.5 font-semibold px-6 py-4 rounded-xl border border-white/25 transition-all active:scale-95 text-white hover:bg-white/20"
-              style={{ background: "rgba(255,255,255,0.13)", backdropFilter: "blur(6px)" }}
+              style={{
+                background: "rgba(255,255,255,0.13)",
+                backdropFilter: "blur(6px)",
+              }}
             >
               <MapPin size={18} />
               {t.hero.cta_directions}
