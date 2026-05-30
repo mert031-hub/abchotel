@@ -170,3 +170,16 @@ body {
 .pb-safe {
   padding-bottom: max(16px, env(safe-area-inset-bottom));
 }
+
+/* Hero: fill the visible viewport (excludes browser chrome on mobile) */
+.hero-section {
+  min-height: 100vh;
+  min-height: 100svh; /* small viewport height — most reliable on iOS/Android */
+}
+
+/* Hero video: shift focal point on mobile so rooms look intentional, not cropped */
+@media (max-width: 767px) {
+  .hero-video {
+    object-position: center 30%;
+  }
+}
