@@ -90,6 +90,7 @@ export default function ApartmentTypes() {
                   src={image}
                   alt={data.name}
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 {/* Image accent overlay */}
@@ -106,6 +107,7 @@ export default function ApartmentTypes() {
                   src={image2}
                   alt={`${data.name} view 2`}
                   fill
+                  sizes="64px"
                   className="object-cover"
                 />
               </div>

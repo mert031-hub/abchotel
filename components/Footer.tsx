@@ -147,7 +147,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="border-t border-slate-800 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-slate-500 text-sm">
-            © {new Date().getFullYear()} ABC Apart Hotel. {t.footer.rights}
+            © 2025 ABC Apart Hotel. {t.footer.rights}
           </p>
           <p className="text-slate-600 text-xs">
             Güzeloba, Muratpaşa, Antalya

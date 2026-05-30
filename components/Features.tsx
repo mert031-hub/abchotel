@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import Image from "next/image";
 import {
   Refrigerator,
   Flame,
@@ -21,23 +22,27 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
-type Category = {
+type CategoryConfig = {
   key: string;
-  label: string;
-  color: string;
-  bg: string;
+  bgImage: string;
+  tintClass: string;          // Tailwind background tint for the overlay
+  titleColor: string;
   iconBg: string;
+  iconColor: string;
+  borderClass: string;
   items: { icon: React.ElementType; key: string }[];
 };
 
-function useCategories(t: ReturnType<typeof useLanguage>["t"]): Category[] {
-  return [
+function useCategories(t: ReturnType<typeof useLanguage>["t"]): (CategoryConfig & { label: string })[] {
+  const configs: CategoryConfig[] = [
     {
       key: "kitchen",
-      label: t.features.categories.kitchen,
-      color: "text-amber-700",
-      bg: "bg-amber-50 border-amber-100",
+      bgImage: "/images/mutfak1.avif",
+      tintClass: "bg-amber-50/80",
+      titleColor: "text-amber-800",
       iconBg: "bg-amber-100",
+      iconColor: "text-amber-700",
+      borderClass: "border-amber-200",
       items: [
         { icon: Refrigerator, key: "fridge" },
         { icon: Flame, key: "oven" },
@@ -47,10 +52,12 @@ function useCategories(t: ReturnType<typeof useLanguage>["t"]): Category[] {
     },
     {
       key: "living",
-      label: t.features.categories.living,
-      color: "text-blue-700",
-      bg: "bg-blue-50 border-blue-100",
+      bgImage: "/images/salon.avif",
+      tintClass: "bg-blue-50/80",
+      titleColor: "text-blue-800",
       iconBg: "bg-blue-100",
+      iconColor: "text-blue-700",
+      borderClass: "border-blue-200",
       items: [
         { icon: Maximize, key: "spacious" },
         { icon: Sofa, key: "living_area" },
@@ -60,10 +67,12 @@ function useCategories(t: ReturnType<typeof useLanguage>["t"]): Category[] {
     },
     {
       key: "bathroom",
-      label: t.features.categories.bathroom,
-      color: "text-cyan-700",
-      bg: "bg-cyan-50 border-cyan-100",
+      bgImage: "/images/banyo1.avif",
+      tintClass: "bg-cyan-50/80",
+      titleColor: "text-cyan-800",
       iconBg: "bg-cyan-100",
+      iconColor: "text-cyan-700",
+      borderClass: "border-cyan-200",
       items: [
         { icon: ShowerHead, key: "shower" },
         { icon: Droplets, key: "shower_head" },
@@ -73,10 +82,12 @@ function useCategories(t: ReturnType<typeof useLanguage>["t"]): Category[] {
     },
     {
       key: "extra",
-      label: t.features.categories.extra,
-      color: "text-violet-700",
-      bg: "bg-violet-50 border-violet-100",
+      bgImage: "/images/ciftkisilik1.avif",
+      tintClass: "bg-violet-50/80",
+      titleColor: "text-violet-800",
       iconBg: "bg-violet-100",
+      iconColor: "text-violet-700",
+      borderClass: "border-violet-200",
       items: [
         { icon: WashingMachine, key: "washing" },
         { icon: Shirt, key: "iron" },
@@ -86,6 +97,11 @@ function useCategories(t: ReturnType<typeof useLanguage>["t"]): Category[] {
       ],
     },
   ];
+
+  return configs.map((c) => ({
+    ...c,
+    label: t.features.categories[c.key as keyof typeof t.features.categories],
+  }));
 }
 
 export default function Features() {
@@ -130,30 +146,48 @@ export default function Features() {
           </p>
         </div>
 
-        {/* Category cards */}
+        {/* Category cards with background images */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {categories.map((cat, ci) => (
             <div
               key={cat.key}
-              className={`reveal reveal-delay-${ci + 1} border rounded-2xl p-6 hover:shadow-lg transition-all duration-300 group ${cat.bg}`}
+              className={`reveal reveal-delay-${ci + 1} relative overflow-hidden border ${cat.borderClass} rounded-2xl hover:shadow-xl transition-all duration-300 group`}
             >
-              <h3 className={`font-bold text-lg mb-5 ${cat.color}`}>
-                {cat.label}
-              </h3>
-              <ul className="space-y-3">
-                {cat.items.map(({ icon: Icon, key }) => (
-                  <li key={key} className="flex items-center gap-3">
-                    <div
-                      className={`w-8 h-8 ${cat.iconBg} rounded-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform`}
-                    >
-                      <Icon size={15} className={cat.color} />
-                    </div>
-                    <span className="text-slate-700 text-sm font-medium">
-                      {t.features.items[key as keyof typeof t.features.items]}
-                    </span>
-                  </li>
-                ))}
-              </ul>
+              {/* ── Background image (blurred, low-opacity) ── */}
+              <div className="absolute inset-0 overflow-hidden">
+                <Image
+                  src={cat.bgImage}
+                  alt=""
+                  fill
+                  className="object-cover scale-110 blur-sm opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                  aria-hidden
+                />
+              </div>
+
+              {/* ── Color tint overlay ── */}
+              <div className={`absolute inset-0 ${cat.tintClass}`} aria-hidden />
+
+              {/* ── Content ── */}
+              <div className="relative z-10 p-6">
+                <h3 className={`font-bold text-lg mb-5 ${cat.titleColor}`}>
+                  {cat.label}
+                </h3>
+                <ul className="space-y-3">
+                  {cat.items.map(({ icon: Icon, key }) => (
+                    <li key={key} className="flex items-center gap-3">
+                      <div
+                        className={`w-8 h-8 ${cat.iconBg} rounded-lg flex items-center justify-center shrink-0 group-hover:scale-105 transition-transform`}
+                      >
+                        <Icon size={15} className={cat.iconColor} />
+                      </div>
+                      <span className="text-slate-700 text-sm font-medium">
+                        {t.features.items[key as keyof typeof t.features.items]}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           ))}
         </div>

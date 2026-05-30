@@ -62,7 +62,8 @@ export default function RootLayout({
         <meta name="theme-color" content="#2563eb" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </head>
-      <body className="min-h-full flex flex-col overflow-x-hidden">
+      {/* suppressHydrationWarning prevents noise from browser-extension DOM mutations */}
+      <body suppressHydrationWarning className="min-h-full flex flex-col overflow-x-hidden">
         <LanguageProvider>{children}</LanguageProvider>
       </body>
     </html>

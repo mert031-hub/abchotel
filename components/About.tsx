@@ -53,6 +53,7 @@ export default function About() {
                   src="/images/salon3.avif"
                   alt="Comfortable living room"
                   fill
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -61,6 +62,7 @@ export default function About() {
                   src="/images/ciftkisilik2.avif"
                   alt="Comfortable bedroom"
                   fill
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -69,6 +71,7 @@ export default function About() {
                   src="/images/mutfak2.avif"
                   alt="Fully equipped kitchen"
                   fill
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -77,6 +80,7 @@ export default function About() {
                   src="/images/balkon1.webp"
                   alt="Private balcony"
                   fill
+                  sizes="(max-width: 640px) 45vw, (max-width: 1024px) 45vw, 22vw"
                   className="object-cover hover:scale-105 transition-transform duration-500"
                 />
               </div>
